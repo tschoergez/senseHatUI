@@ -1,0 +1,29 @@
+package:
+    name: MT-sensehat-demo-service
+    description: Install service components for SenseHAT demo functionality.
+    version: 1.0.4
+    manifest:
+        headlessExecution: true
+        lifecycle:
+            -   phase: verify
+                action: verify.sh
+            -   phase: execute
+                action: execute.sh
+            -   phase: validate
+                action: validate.sh
+            -   phase: activate
+                action: activate.sh
+            -   phase: reset
+                action: reset.sh
+
+    attachments:
+        -   path: /home/pulse_campaigns/sensehat-demo/files/humidity.py
+        -   path: /home/pulse_campaigns/sensehat-demo/files/pressure.py
+        -   path: /home/pulse_campaigns/sensehat-demo/files/temperature.py
+        -   path: /home/pulse_campaigns/sensehat-demo/files/sensehat.sh
+        -   path: /home/pulse_campaigns/sensehat-demo/files/sensehat.service
+        -   path: /home/pulse_campaigns/sensehat-demo/files/verify.sh
+        -   path: /home/pulse_campaigns/sensehat-demo/files/execute.sh
+        -   path: /home/pulse_campaigns/sensehat-demo/files/validate.sh
+        -   path: /home/pulse_campaigns/sensehat-demo/files/activate.sh
+        -   path: /home/pulse_campaigns/sensehat-demo/files/reset.sh
