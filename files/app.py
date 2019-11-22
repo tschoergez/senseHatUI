@@ -73,7 +73,12 @@ def set_led_color(rgb):
 def set_message():
     if not request.json or not 'message' in request.json:
         abort(400)
-    sense.show_message(request.json["message"], text_colour=[255,255,255])
+    if not request.json["color"]:
+        color = "#FFFFFF"
+    else:
+        color = request.json["color"]
+    color = color.lstrip('#')
+    sense.show_message(request.json["message"], text_colour=[int(color[0:2],16), int(color[2:4],16), int(color[4:6], 16)])
     return jsonify({'success': True})
 
 

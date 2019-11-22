@@ -6,8 +6,8 @@
 </head>
 <body>
   <div class="jumbotron">
-      <h1>Bootstrap Colorpicker Demo</h1>
-      <input id="demo" type="text" class="form-control" value="#FFFF00" />
+      <h1>Pick Color</h1>
+      <input id="demo" type="button" class="btn btn-primary" value="#FFFF00" />
   </div>
   <div class="jumbotron">
         <h1>Message</h1>
@@ -33,9 +33,11 @@ $("#messageButton").click(function() {
     $.ajax({
         url:"api/write",
         type:"POST",
-        data: JSON.stringify({"message" : $("#message").val()}),
+        data: JSON.stringify({"message" : $("#message").val(),
+                                "color" : $("#demo").val()}),
         contentType: "application/json",
         dataType:"json"});
+    $("#message").val('');
 });
  </script>
  </body> 
