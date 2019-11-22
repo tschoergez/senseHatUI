@@ -1,0 +1,12 @@
+ {% extends "header.html" %} {% block body %}
+<div class="login-wrapper">
+    <form class="login" id="loginform", method="POST">
+        <label class="title">
+            <h3 class="welcome">SenseHat UI<h3>
+        </label>
+            <input class="username" type="text" name="message" placeholder="message" value="{{ request.form.message }}">
+            <button type="submit" class="btn btn-primary">Write Message</button>
+        </div>
+    </form>
+</div>
+{% endblock %}  
