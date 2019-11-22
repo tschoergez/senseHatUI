@@ -21,7 +21,6 @@ sense.set_rotation(180)
 def index():
     return redirect(url_for('colors'))
 
-
 @app.route('/login', methods=["GET", "POST"])
 def homepage():
     if request.method == "POST": 
@@ -72,10 +71,10 @@ def set_led_color(rgb):
 
 @app.route('/api/write', methods=['POST'])
 def set_message():
-	if not request.json or not 'message' in request.json:
-		abort(400)
-	sense.show_message(request.json["message"], text_colour=[255,255,255])
-	return jsonify({'success': True})
+    if not request.json or not 'message' in request.json:
+        abort(400)
+    sense.show_message(request.json["message"], text_colour=[255,255,255])
+    return jsonify({'success': True})
 
 
 if __name__ == '__main__':
